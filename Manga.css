@@ -14,20 +14,27 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
     background: #0b0d12;
+
     color: #ffffff;
+
+    min-height: 100vh;
 }
 
 
 /* =========================
-   HEADER
+   ENCABEZADO
 ========================= */
 
 .header {
+
     height: 70px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 7%;
@@ -37,6 +44,7 @@ body {
     border-bottom: 1px solid #252a33;
 
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
@@ -46,32 +54,42 @@ body {
 /* LOGO */
 
 .logo {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
 
     font-weight: 900;
 }
 
 .dragon {
+
     color: #ff9d00;
+
     font-size: 20px;
 }
 
 .fan {
+
     color: #ffffff;
+
     font-size: 13px;
 }
 
 
-/* NAV */
+/* NAVEGACIÓN */
 
 .navigation {
+
     display: flex;
+
     gap: 30px;
 }
 
 .navigation a {
+
     color: #bfc4cc;
 
     text-decoration: none;
@@ -82,13 +100,15 @@ body {
 }
 
 .navigation a:hover {
+
     color: #ff9d00;
 }
 
 
-/* SEARCH */
+/* BOTÓN BUSCAR */
 
 .search-button {
+
     background: transparent;
 
     border: none;
@@ -102,10 +122,11 @@ body {
 
 
 /* =========================
-   MAIN
+   CONTENEDOR PRINCIPAL
 ========================= */
 
 main {
+
     width: min(1150px, 90%);
 
     margin: auto;
@@ -113,7 +134,7 @@ main {
 
 
 /* =========================
-   MANGA HEADER
+   INFORMACIÓN DEL MANGA
 ========================= */
 
 .manga-header {
@@ -122,29 +143,32 @@ main {
 
     grid-template-columns: 280px 1fr;
 
-    gap: 45px;
+    gap: 50px;
 
     padding: 70px 0;
 
-    border-bottom: 1px solid #242a33;
+    border-bottom: 1px solid #252a33;
 }
 
 
-/* COVER */
+/* =========================
+   PORTADA
+========================= */
 
 .manga-cover {
 
     width: 280px;
 
-    height: 390px;
-
-    border-radius: 12px;
+    height: 400px;
 
     overflow: hidden;
 
+    border-radius: 12px;
+
     background: #151a22;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.5);
 }
 
 .manga-cover img {
@@ -155,11 +179,12 @@ main {
 
     object-fit: cover;
 
+    display: block;
 }
 
 
 /* =========================
-   INFORMATION
+   INFORMACIÓN
 ========================= */
 
 .manga-information {
@@ -172,15 +197,15 @@ main {
 }
 
 
-/* CATEGORY */
+/* CATEGORÍA */
 
 .category {
-
-    display: inline-block;
 
     width: fit-content;
 
     padding: 6px 10px;
+
+    margin-bottom: 15px;
 
     border-radius: 5px;
 
@@ -193,16 +218,14 @@ main {
     font-weight: bold;
 
     letter-spacing: 1px;
-
-    margin-bottom: 15px;
 }
 
 
-/* TITLE */
+/* TÍTULO */
 
 .manga-information h1 {
 
-    font-size: clamp(35px, 5vw, 55px);
+    font-size: clamp(38px, 5vw, 58px);
 
     line-height: 1;
 
@@ -210,11 +233,11 @@ main {
 }
 
 
-/* DESCRIPTION */
+/* DESCRIPCIÓN */
 
 .description {
 
-    max-width: 700px;
+    max-width: 720px;
 
     color: #aeb5c0;
 
@@ -226,18 +249,24 @@ main {
 }
 
 
-/* INFORMATION BOX */
+/* =========================
+   INFORMACIÓN BÁSICA
+========================= */
 
 .information {
 
-    display: flex;
+    display: grid;
 
-    gap: 50px;
+    grid-template-columns:
+        repeat(2, minmax(150px, 1fr));
+
+    gap: 22px;
 
     margin-bottom: 30px;
 }
 
-.information div {
+
+.info-item {
 
     display: flex;
 
@@ -246,49 +275,117 @@ main {
     gap: 7px;
 }
 
-.information span {
+
+.info-item span {
 
     color: #727b88;
 
-    font-size: 12px;
+    font-size: 11px;
 
     text-transform: uppercase;
+
+    letter-spacing: 0.5px;
 }
 
-.information strong {
+
+.info-item strong {
 
     color: #ffffff;
 
     font-size: 14px;
 }
 
-.status {
 
-    color: #65d38a !important;
+/* ESTADO */
+
+.status-progress {
+
+    color: #ffad19 !important;
 }
 
 
 /* =========================
-   BUTTONS
+   ESTADÍSTICAS
 ========================= */
 
-.buttons {
+.statistics {
 
     display: flex;
 
-    gap: 12px;
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.stat {
+
+    min-width: 150px;
+
+    padding: 18px;
+
+    background: #12171f;
+
+    border: 1px solid #252d38;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.stat strong {
+
+    font-size: 28px;
+
+    color: #ff9d00;
+}
+
+
+.stat span {
+
+    color: #7d8592;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   DESCARGAS
+========================= */
+
+.downloads {
+
+    margin-top: 5px;
+}
+
+.downloads h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+}
+
+
+.download-buttons {
+
+    display: flex;
+
+    gap: 10px;
 
     flex-wrap: wrap;
 }
 
 
-.read-button {
+.download {
 
-    background: #ff9d00;
-
-    color: #111;
-
-    padding: 13px 20px;
+    padding: 13px 18px;
 
     border-radius: 7px;
 
@@ -296,10 +393,23 @@ main {
 
     font-weight: bold;
 
+    font-size: 13px;
+
     transition: 0.2s;
 }
 
-.read-button:hover {
+
+/* ESPAÑOL */
+
+.download.spanish {
+
+    background: #ff9d00;
+
+    color: #111;
+}
+
+
+.download.spanish:hover {
 
     background: #ffb52e;
 
@@ -307,187 +417,90 @@ main {
 }
 
 
-.favorite-button {
+/* INGLÉS */
+
+.download.english {
 
     background: #181d25;
 
     color: #ffffff;
 
     border: 1px solid #303743;
-
-    padding: 13px 20px;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
 }
 
-.favorite-button:hover {
+
+.download.english:hover {
 
     border-color: #ff9d00;
 
     color: #ff9d00;
+
+    transform: translateY(-2px);
 }
 
 
 /* =========================
-   CONTENT
+   INFORMACIÓN ADICIONAL
 ========================= */
 
-.content {
+.additional {
 
     padding: 50px 0;
 }
 
 
-/* TITLE */
+.additional h2 {
 
-.section-title {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
+    font-size: 26px;
 
     margin-bottom: 20px;
 }
 
-.section-title h2 {
 
-    font-size: 26px;
-}
+.additional-grid {
 
-.section-title span {
+    display: grid;
 
-    color: #777f8b;
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    font-size: 13px;
-}
-
-
-/* =========================
-   CHAPTERS
-========================= */
-
-.chapters {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 10px;
+    gap: 15px;
 }
 
 
-.chapter {
+.additional-card {
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    padding: 17px 20px;
+    padding: 22px;
 
     background: #12171f;
 
-    border: 1px solid #242b35;
+    border: 1px solid #252d38;
 
-    border-radius: 8px;
-
-    text-decoration: none;
-
-    color: white;
-
-    transition: 0.2s;
-}
-
-
-.chapter:hover {
-
-    border-color: #ff9d00;
-
-    background: #171c24;
-
-    transform: translateX(4px);
-}
-
-
-/* NUMBER */
-
-.chapter-number {
-
-    width: 75px;
+    border-radius: 9px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 3px;
-}
-
-.chapter-number span {
-
-    color: #727b88;
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-}
-
-.chapter-number strong {
-
-    font-size: 23px;
-
-    color: #ffad19;
+    gap: 8px;
 }
 
 
-/* NAME */
+.additional-card span {
 
-.chapter-name {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    flex: 1;
-}
-
-.chapter-name strong {
-
-    font-size: 15px;
-}
-
-.chapter-name span {
-
-    color: #727b88;
+    color: #737c89;
 
     font-size: 12px;
+
+    text-transform: uppercase;
 }
 
 
-/* ARROW */
+.additional-card strong {
 
-.chapter-arrow {
+    font-size: 20px;
 
-    font-size: 22px;
-
-    color: #707985;
-
-    transition: 0.2s;
-}
-
-.chapter:hover .chapter-arrow {
-
-    color: #ff9d00;
-
-    transform: translateX(5px);
+    color: #ffffff;
 }
 
 
@@ -520,12 +533,14 @@ footer {
     margin-bottom: 10px;
 }
 
+
 footer p {
 
     font-size: 13px;
 
     margin-bottom: 8px;
 }
+
 
 .copyright {
 
@@ -534,15 +549,47 @@ footer p {
 
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+
+    .manga-header {
+
+        grid-template-columns: 220px 1fr;
+
+        gap: 30px;
+    }
+
+
+    .manga-cover {
+
+        width: 220px;
+
+        height: 320px;
+    }
+
+
+    .additional-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 700px) {
 
     .header {
 
         padding: 0 5%;
     }
+
 
     .navigation {
 
@@ -554,9 +601,9 @@ footer p {
 
         grid-template-columns: 1fr;
 
-        gap: 30px;
-
         padding: 40px 0;
+
+        gap: 30px;
     }
 
 
@@ -564,7 +611,7 @@ footer p {
 
         width: 230px;
 
-        height: 320px;
+        height: 330px;
 
         margin: auto;
     }
@@ -586,24 +633,50 @@ footer p {
     }
 
 
+    .description {
+
+        font-size: 14px;
+    }
+
+
     .information {
 
-        justify-content: center;
+        width: 100%;
 
-        flex-wrap: wrap;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-        gap: 25px;
+        text-align: center;
     }
 
 
-    .buttons {
+    .statistics {
+
+        justify-content: center;
+
+        width: 100%;
+    }
+
+
+    .download-buttons {
 
         justify-content: center;
     }
+
+
+    .additional-grid {
+
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
-@media (max-width: 500px) {
+/* =========================
+   MÓVIL PEQUEÑO
+========================= */
+
+@media (max-width: 450px) {
 
     main {
 
@@ -617,29 +690,29 @@ footer p {
     }
 
 
-    .description {
+    .information {
 
-        font-size: 14px;
+        grid-template-columns: 1fr;
     }
 
 
-    .chapter {
+    .statistics {
 
-        padding: 14px;
-
-        gap: 10px;
+        flex-direction: column;
     }
 
 
-    .chapter-number {
+    .stat {
 
-        width: 55px;
+        width: 100%;
     }
 
 
-    .chapter-name strong {
+    .download {
 
-        font-size: 13px;
+        width: 100%;
+
+        text-align: center;
     }
 
 }
